@@ -100,14 +100,15 @@ fi
 ##### ==============================================================
 
 ## Unlist Coincidences, ROOT_FILENAME_PREFIX should be same as above, ignore "*.Coincidences.root" addition
+## coincidences sinogram
 ./SubScripts/UnlistRoot.sh $StoreRootFilesDirectory $ROOT_FILENAME_PREFIX "Coincidences" $UnlistScatteredCoincidences $UnlistRandomCoincidences 
-if [ $? -ne 0 ]; then
 	echo "Error in ./SubScripts/UnlistRoot.sh for Coincidences"
 	exit 1
 fi
 
 if [ $UnlistDelayedEvents == 1 ]; then
 	## Unlist Delayed, ROOT_FILENAME_PREFIX should be same as above, ignore "*.Delayed.root" addition
+ 	## delayed sinogram for randoms correction in STIR
 	./SubScripts/UnlistRoot.sh $StoreRootFilesDirectory $ROOT_FILENAME_PREFIX "Delayed" $UnlistScatteredCoincidences $UnlistRandomCoincidences 
 	if [ $? -ne 0 ]; then
 		echo "Error in ./SubScripts/UnlistRoot.sh for Delayed."
