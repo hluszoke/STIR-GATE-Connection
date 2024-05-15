@@ -62,7 +62,7 @@ UnlistDelayedEvents=1
 
 ## This could be done by SetupSimulation.sh, but we need the $ActivityFilename and 
 ## $AttenuationFilename for this example
-SourceFilenames=`SubScripts/GenerateSTIRGATEImages.sh $Activity $Attenuation 2>/dev/null`
+SourceFilenames=`SubScripts/GenerateSTIRGATEImages.sh $Activity $Attenuation 2>/dev/null` ## returns .h33 files
 if [ $? -ne 0 ] ;then
 	echo "Error in SubScripts/GenerateSTIRGATEImages.sh"
 	echo $GenerateSTIRGATEImagesOUTPUT
